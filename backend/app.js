@@ -8,6 +8,8 @@ const app = express();
 
 const stuffRoutes = require("./routes/stuff");
 
+const userRoutes = require('./routes/user');
+
 mongoose.connect('mongodb+srv://Eben:eben@cluster0-lbjpo.mongodb.net/test?retryWrites=true&w=majority')
   .then(() => {
     console.log('Successfully connected to MongoDB Atlas!');
@@ -26,7 +28,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/stuff" , stuffRoutes);
+
+app.use('/api/stuff', stuffRoutes);
+app.use('/api/auth', userRoutes);
 
 
 module.exports = app;
