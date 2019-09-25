@@ -6,15 +6,17 @@ const stuffController = require("../controllers/stuff");
 
 const Thing = require('../models/thing');
 
-router.post('/', stuffController.creatThing);
+const auth  =  require("../middleware/auth");
 
-router.get('/', stuffController.getAllThings);
+router.post('/',  auth , stuffController.creatThing);
 
-router.get('/:id', stuffController.getOneThing);
+router.get('/',  auth , stuffController.getAllThings);
 
-router.put('/:id', stuffController.modifyThing);
+router.get('/:id',  auth , stuffController.getOneThing);
 
-router.delete('/:id', stuffController.deleteThing);
+router.put('/:id', auth ,  stuffController.modifyThing);
+
+router.delete('/:id', auth ,  stuffController.deleteThing);
 
 
 

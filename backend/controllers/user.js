@@ -45,7 +45,7 @@ exports.login = (req, res, next) => {
             { userId: user._id },
             'RANDOM_TOKEN_SECRET',
             { expiresIn: '24h' });
-          
+
           res.status(200).json({
             userId: user._id,
             token: token
@@ -67,3 +67,4 @@ exports.login = (req, res, next) => {
     }
   );
 }
+
