@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+<html class="no-js " lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<title>
+                            Accept incoming files with multer - Go Full-Stack With Node.js, Express, and MongoDB - OpenClassrooms
+                    </title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="application-name" content="OpenClassrooms" />
+<meta name="msapplication-TileColor" content="#7451eb" />
+<meta name="msapplication-TileImage" content="/fav-icon.png?v=3" />
+<meta name="theme-color" content="#7451eb">
+<meta property="og:locale" content="en_US" />
+<link rel="icon" sizes="144x144" href="/fav-icon.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
+<link rel="apple-touch-icon" href="/apple-touch-icon-iphone.png?v=3" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-ipad.png?v=3" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-iphone-retina-display.png?v=3" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-ipad-retina-display.png?v=3" />
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png?v=3" />
+<link rel="shortcut icon" href="/favicon.ico?f87ce09" />
+<style>.async-hide { opacity: 0 !important} </style>
+<script>
+          window.dataLayer = window.dataLayer || [];
+
+          (function(a,s,y,n,c,h,i,d,e){
+            var isEnabled = [
+              /\/paths/,
+              /\/apprenticeship/,
+              /\/employer/,
+            ].reduce(function (acc, pathReg) {
+                var matchUrl = !!document.location.pathname.match(pathReg);
+                return acc || matchUrl;
+            }, false);
+
+            if (!isEnabled) {
+              return;
+            }
+
+            s.className+=' '+y;
+            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+            (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);
+          })(window,document.documentElement,'async-hide','dataLayer',2000,{'GTM-5WM9PV':true});
+        </script>
+<link href="/bundles/common/css/master-2b083c85.css" type="text/css" rel="stylesheet" media="all" />
+<link href="/bundles/course/css/main-231a0d85.css" type="text/css" rel="stylesheet" media="all" />
+<link href="https://vjs.zencdn.net/6.2.5/video-js.css" rel="stylesheet">
+<script>
+    /*! modernizr 3.3.1 (Custom Build) | MIT *
+    * https://modernizr.com/download/?-cssfilters-touchevents-setclasses !*/
+    !function(e,n,t){function o(e,n){return typeof e===n}function r(){var e,n,t,r,s,i,a;for(var l in C)if(C.hasOwnProperty(l)){if(e=[],n=C[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(r=o(n.fn,"function")?n.fn():n.fn,s=0;s<e.length;s++)i=e[s],a=i.split("."),1===a.length?Modernizr[a[0]]=r:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=r),g.push((r?"":"no-")+a.join("-"))}}function s(e){var n=w.className,t=Modernizr._config.classPrefix||"";if(x&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),x?w.className.baseVal=n:w.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):x?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function a(){var e=n.body;return e||(e=i(x?"svg":"body"),e.fake=!0),e}function l(e,t,o,r){var s,l,u,f,p="modernizr",c=i("div"),d=a();if(parseInt(o,10))for(;o--;)u=i("div"),u.id=r?r[o]:p+(o+1),c.appendChild(u);return s=i("style"),s.type="text/css",s.id="s"+p,(d.fake?d:c).appendChild(s),d.appendChild(c),s.styleSheet?s.styleSheet.cssText=e:s.appendChild(n.createTextNode(e)),c.id=p,d.fake&&(d.style.background="",d.style.overflow="hidden",f=w.style.overflow,w.style.overflow="hidden",w.appendChild(d)),l=t(c,e),d.fake?(d.parentNode.removeChild(d),w.style.overflow=f,w.offsetHeight):c.parentNode.removeChild(c),!!l}function u(e,n){return!!~(""+e).indexOf(n)}function f(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function p(e,n){return function(){return e.apply(n,arguments)}}function c(e,n,t){var r;for(var s in e)if(e[s]in n)return t===!1?e[s]:(r=n[e[s]],o(r,"function")?p(r,t||n):r);return!1}function d(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function m(n,o){var r=n.length;if("CSS"in e&&"supports"in e.CSS){for(;r--;)if(e.CSS.supports(d(n[r]),o))return!0;return!1}if("CSSSupportsRule"in e){for(var s=[];r--;)s.push("("+d(n[r])+":"+o+")");return s=s.join(" or "),l("@supports ("+s+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return t}function h(e,n,r,s){function a(){p&&(delete k.style,delete k.modElem)}if(s=o(s,"undefined")?!1:s,!o(r,"undefined")){var l=m(e,r);if(!o(l,"undefined"))return l}for(var p,c,d,h,v,y=["modernizr","tspan","samp"];!k.style&&y.length;)p=!0,k.modElem=i(y.shift()),k.style=k.modElem.style;for(d=e.length,c=0;d>c;c++)if(h=e[c],v=k.style[h],u(h,"-")&&(h=f(h)),k.style[h]!==t){if(s||o(r,"undefined"))return a(),"pfx"==n?h:!0;try{k.style[h]=r}catch(g){}if(k.style[h]!=v)return a(),"pfx"==n?h:!0}return a(),!1}function v(e,n,t,r,s){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+j.join(i+" ")+i).split(" ");return o(n,"string")||o(n,"undefined")?h(a,n,r,s):(a=(e+" "+E.join(i+" ")+i).split(" "),c(a,n,t))}function y(e,n,o){return v(e,t,t,n,o)}var g=[],C=[],S={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){C.push({name:e,fn:n,options:t})},addAsyncTest:function(e){C.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=S,Modernizr=new Modernizr;var w=n.documentElement,x="svg"===w.nodeName.toLowerCase(),_=S._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];S._prefixes=_;var b="CSS"in e&&"supports"in e.CSS,T="supportsCSS"in e;Modernizr.addTest("supports",b||T);var z=S.testStyles=l;Modernizr.addTest("touchevents",function(){var t;if("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch)t=!0;else{var o=["@media (",_.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");z(o,function(e){t=9===e.offsetTop})}return t});var P="Moz O ms Webkit",j=S._config.usePrefixes?P.split(" "):[];S._cssomPrefixes=j;var E=S._config.usePrefixes?P.toLowerCase().split(" "):[];S._domPrefixes=E;var N={elem:i("modernizr")};Modernizr._q.push(function(){delete N.elem});var k={style:N.elem.style};Modernizr._q.unshift(function(){delete k.style}),S.testAllProps=v,S.testAllProps=y,Modernizr.addTest("cssfilters",function(){if(Modernizr.supports)return y("filter","blur(2px)");var e=i("a");return e.style.cssText=_.join("filter:blur(2px); "),!!e.style.length&&(n.documentMode===t||n.documentMode>9)}),r(),s(g),delete S.addTest,delete S.addAsyncTest;for(var A=0;A<Modernizr._q.length;A++)Modernizr._q[A]();e.Modernizr=Modernizr}(window,document);
+    </script>
+<script type="text/javascript">
+    var App = {
+        startTime: (new Date()).getTime(),
+        pageGenerationDate: 1569605260000
+    };
+
+    App.user = {
+                    id: 9964501,
+            age: '',
+            createdAt: '2019\u002D08\u002D28T23\u003A11\u003A21\u002B02\u003A00',
+            gender: '',
+            premiumType: 'Premium\u0020Solo',
+            locale: 'en',
+            language: 'en',
+            displayableName: 'Eben\u0020Igbinoba',
+            email: 'igbinobaebenezer\u0040gmail.com',
+            country: '',
+            phoneNumber: '',
+            avatar: 'https\u003A\/\/openclassrooms.com\/bundles\/common\/images\/avatar_defaut.png',
+            isPremium: true,
+            isMentor: false
+            };
+
+    App.preferences = {
+        debug: false,
+        assetVersion: 'f87ce09',
+        contactMail: 'hello\u0040openclassrooms.com',
+        contactPhone: '\u002B44\u002016\u00201768\u00201880',
+        phoneNumbersByCountry: {"uk":{"contact":"+44 16 1768 1880"},"ca":{"contact":"+1 929-376-0101"},"us":{"contact":"+1 929-376-0101"},"fr":{"contact":"+33 1 80 88 80 30","b2b_contact":"+33 1 80 88 80 40"},"es":{"contact":"+33 1 80 88 80 30"}},
+        adyenPublicKey: '10001\u007C889EBFD4D434B82683E21DCA26E77C3E20E0EE09A5ECE3830B0ED51F2FA721A2F7E9EC871C6AB9A1E12C4492F4717673047757E02C5256D8E265CD51E413E5EFCCFEAC41B39C662A424ADC13EE187C38C372A7FCCEC1EA5DF841989437D78B252A8EB51008E60BB55B1E55A7A80DE1A9D60D998C128A576BFAE1DDB97D514AF0A073AEDDE84CEE40D1F8F6ECE85D0FFA50C95C06DB274021C1371376C6EB16561FD65C5E2704B570A7504D617D0F3820F176A0609F6162BDF5890533289FDC3DA7DB03B50BB3BD60A613E1FF72060F22987627E8F1A29F0128A94EC4C8FF7CF6B7AB9558D8433BF86D7A388AB927641CD6C02689139CEE3AAC9ACBFFE83806CB',
+        cdnImage: true,
+        layer: {
+            appId: 'layer\u003A\/\/\/apps\/staging\/7757c53a\u002Db2ba\u002D11e5\u002Db2a6\u002D2584730b1501',
+            identityProviderUrl: '\/ajax\/conversations\/get\u002Didentity\u002Dtoken'
+        },
+        algolia: {
+            appId: 'JGRXRFVQM0',
+            apiKey: 'cd1e2696005d97e99dc7b882297b09cf',
+            indexName: 'prod_v2_COURSES_en'
+        },
+        google: {
+            appId: '132418960718\u002Djdnmpug3g9e6ub2p41ergcci1492qh82.apps.googleusercontent.com',
+            maps: {
+                apiKey: 'AIzaSyDQKLz54HFMtUf9Yo8cWkgR8Af3eU2HAiE'
+            },
+        },
+        application: {
+            googleForm: {
+              funnelUrl: 'https\u003A\/\/docs.google.com\/forms\/d\/e\/1FAIpQLScBRRimATSOJGW9Af\u002DDifIkzpXwvGRZEnIdxH7dcSiadjYCxQ\/formResponse',
+              fields: {"firstname":"entry.336110006","lastname":"entry.994821149","email":"entry.944181070","path_id":"entry.207247512","path_category_id":"entry.2119822715","consent":"entry.1541801802","user_locale":"entry.2127604397","userId":"entry.29878360","gender":"entry.114162226","diploma_level":"entry.513429021","language_proficiency_fr":"entry.2112993571","language_proficiency_en":"entry.622935801","ha_google_place_id":"entry.1048707629","ha_addressline_1":"entry.694389504","ha_city":"entry.212574166","ha_zip_code":"entry.179816654","ha_state":"entry.175591718","ha_country":"entry.540542428","ha_longitude":"entry.1240719233","ha_latitude":"entry.1673918511","professional_status":"entry.1977816976","disabled_worker":"entry.1666989190","veteran":"entry.485570822","athlete":"entry.639827067","refugee":"entry.1506421983","rsa":"entry.1773932570","can_work_in_france":"entry.672900422","online_cv":"entry.1625514336","work_location":"entry.1064429460","career_motivation":"entry.453936061","has_computer":"entry.1607977565","has_mic_webcam":"entry.2077820102","has_fast_internet_connection":"entry.352837916","has_quiet_space":"entry.1717297539"}
+            },
+        },
+        facebook: {
+            appId: '277769842283905',
+        },
+        routes: {
+            COURSE_EVENT: '/components/courses/:courseId',
+            COURSE_PART_EVENT: '/components/courses/:courseId/parts/:partId',
+
+            ACCEPT_COOKIE: '\/ajax\/components\/user\u002Daccept\u002Dconsent\u002Dcookie'
+        },
+
+                    };
+
+    App.preferences.navigationPreference = {
+                                    consentCookieExpiredAt: 1601327492
+                        };
+
+    App.preferences.modules = {
+        'smiley': {
+            basePath: '/bundles/common/images/smiley/'
+        }
+    };
+
+    try {
+        App.api = JSON.parse("\u007B\u0022anonymous\u0022\u003A\u007B\u0022client_id\u0022\u003A\u0022807605274673228623802113\u0022,\u0022client_secret\u0022\u003A\u00221\u0022\u007D,\u0022logged\u0022\u003A\u007B\u0022client_id\u0022\u003A\u00227xPFDY3bB3ruX44z\u0022\u007D,\u0022urls\u0022\u003A\u007B\u0022authorize\u0022\u003A\u0022https\u003A\\\/\\\/openclassrooms.com\\\/oauth2\\\/authorize\u0022,\u0022root\u0022\u003A\u0022https\u003A\\\/\\\/api.openclassrooms.com\u0022\u007D\u007D");
+    } catch (e) {
+        App.api = {};
+    }
+
+    App.notifications = {};
+    App.scripts = [];
+
+    if (App.user.id) {
+        (function(){
+            var userData = { userId: App.user.id };
+
+            if (App.user.premiumType) {
+                userData.status = (App.user.premiumType === 'Premium Solo') ? 'premium solo student' : 'path student';
+            } else {
+                userData.status = 'free student';
+            }
+
+            if (App.user.isMentor) {
+                userData.status = App.user.premiumType ? (userData.status + '|mentor') : 'mentor';
+            }
+
+            window.dataLayer.push(userData);
+        })();
+    }
+</script>
+<script>    
+    App.preferences.modules['course/view/internalFolding'] = {
+        isBigCourse: true
+    };
+
+    App.data = App.data || {};
+App.data.currentCourse = {"partId":5656306,"partTitle":"Accept incoming files with multer","partSlug":"accept-incoming-files-with-multer","courseId":5614116,"courseTitle":"Go Full-Stack With Node.js, Express, and MongoDB","courseSlug":"go-fullstack-with-node-js-express-and-mongodb","courseLanguage":"en","isIntroduction":false,"isCertifying":true};
+App.preferences.modules['view/currentCoursePage'] = App.data.currentCourse;
+
+window.dataLayer.push({
+  courseTitle: App.data.currentCourse.courseTitle
+});
+
+</script>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Accept incoming files with multer" />
+<meta property="og:url" content="https://openclassrooms.com/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656306-accept-incoming-files-with-multer" />
+<meta property="og:site_name" content="OpenClassrooms" />
+<meta property="og:image" content="https://course.oc-static.com/courses/5614116/5614116_teaser_picture_1563194231.jpg%3Fr%3Dpad" />
+<meta property="og:description" content="Take your JavaScript skills to the back end with Node, Express, and MongoDB — build everything from secure web services to full-featured APIs, creating tools for front end developers to interact with easily." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@OpenClassrooms" />
+<meta name="twitter:title" content="Accept incoming files with multer" />
+<meta name="twitter:image" content="https://course.oc-static.com/courses/5614116/5614116_teaser_picture_1563194231.jpg%3Fr%3Dpad" />
+<meta name="twitter:description" content="Take your JavaScript skills to the back end with Node, Express, and MongoDB — build everything from secure web services to full-featured APIs, creating tools for front end developers to interact with easily." />
+<link rel="canonical" href="https://openclassrooms.com/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656306-accept-incoming-files-with-multer" />
+</head>
+<body class="course oc-body is-connected  breadcrumbFluid breadcrumbOnContrasted">
+<ul class="skipLink">
+<li>
+<a class="skipLink__item" href="#mainContent">Skip to content</a>
+</li>
+<li>
+<a class="skipLink__item" href="#footerChangeLanguage">Select language</a>
+</li>
+<li>
+<a class="skipLink__item" href="#algolia-search-input">Skip to search</a>
+</li>
+</ul>
+<script id="_EVENTS-IDENTIFY" type="application/json">
+            {
+            "type": "identify",
+            "userId": "9964501",
+            "properties": {
+                "age": null,
+                "name": "Eben Igbinoba",
+                "createdAt": "2019-08-28T23:11:21+02:00",
+                "email": "igbinobaebenezer@gmail.com",
+                "gender": null,
+                "premium": true,
+                "premiumType": "Premium Solo",
+                "locale": "en",
+                "language": "en"
+            },
+            "integrations": {
+                "HubSpot": false
+            }
+        }
+        </script>
+<script id="_EVENTS-PAGE" type="application/json">
+        {"type":"page","integrations":{"HubSpot":false},"properties":{"pageCategory":"courses","courseTitle":"Go Full-Stack With Node.js, Express, and MongoDB"}}
+    </script>
+<div id="predictiveCrmTopBanner"></div>
+<script id="headerConfiguration" type="application/json">
+{
+    "user": {
+        "id": 9964501,
+        "displayableName": "Eben Igbinoba",
+        "messageCount": 0,
+        "notificationCount": 0,
+        "profilePicture": "https://openclassrooms.com/bundles/common/images/avatar_defaut.png",
+        "premiumStatus": "solo",
+        "link": {
+            "profile": "/en/membres/eben-igbinoba",
+            "parameter": "/en/membres/eben-igbinoba/parametres",
+            "logOut": "/logout?_csrf_token=QgrERO7YzZ3ACBe-qQzFDSciG68BsVPxQMxLljWPRNc"
+        }
+    },
+    "right": {
+        "canSeeMentorDashboard": false,
+        "canSeeAdminDashboard": false,
+        "canDisplayForumAlert": false
+    }
+}
+</script>
+<div class="formLogin hidden">
+</div>
+<div id="oc-header">
+<div class="oc-mainHeader oc-mainHeader--solo oc-mainHeader--skeleton">
+<div class="grid-wrapper">
+<div class="grid-inner">
+<div style="display: flex;">
+<div class="oc-mainHeaderLogo oc-mainHeaderLogo--skeleton">
+<a href="/fr" class="oc-mainHeaderLogo__link">
+<svg fill="none" height="51" width="668" viewBox="0 0 668 51" xmlns="http://www.w3.org/2000/svg">
+<title>OpenClassrooms.com</title>
+<path d="M406.011 35.018c0 2.82-.71 5.641-2.368 7.991-1.659 2.35-3.79 4.23-6.87 5.64-3.079 1.41-6.869 2.116-11.37 2.116-3.79 0-7.343-.47-10.897-1.41-3.553-.94-6.395-2.35-8.527-3.996l7.106-8.46c1.421.705 2.843 1.175 4.501 1.88 2.842.94 5.448 1.41 8.054 1.41 4.974 0 7.58-1.41 7.58-3.995 0-1.41-.711-2.35-2.132-3.056-1.421-.705-3.79-1.41-6.87-2.115-3.553-.705-6.395-1.645-8.764-2.585s-4.264-2.35-6.159-4.23c-1.658-1.88-2.606-4.701-2.606-7.991 0-3.056.711-5.641 2.369-7.991 1.658-2.35 3.79-4.23 6.87-5.64 3.079-1.41 6.869-2.116 11.37-2.116 3.079 0 6.159.47 9.001 1.175 3.08.705 5.685 1.88 7.817 3.055l-7.343 8.696c-3.316-1.41-6.633-2.115-9.712-2.115-2.606 0-4.501.47-5.685 1.175-1.185.705-1.895 1.88-1.895 3.056 0 1.41.711 2.35 2.132 2.82 1.421.705 3.79 1.41 6.869 2.115a49.4 49.4 0 0 1 8.765 2.585c2.369.94 4.264 2.35 6.159 4.23 1.658 1.646 2.605 4.466 2.605 7.756zm261.989 0c0 2.82-.711 5.641-2.369 7.991s-3.79 4.23-6.869 5.64c-3.08 1.41-6.87 2.116-11.371 2.116-3.79 0-7.343-.47-10.896-1.41s-6.396-2.35-8.528-3.996l7.107-8.46c1.421.705 2.842 1.175 4.501 1.88 2.842.94 5.448 1.41 8.053 1.41 4.975 0 7.581-1.41 7.581-3.995 0-1.41-.711-2.35-2.132-3.056-1.422-.705-3.791-1.41-6.87-2.115a49.361 49.361 0 0 1-8.764-2.585c-2.369-.94-4.264-2.35-6.159-4.23-1.658-1.88-2.606-4.701-2.606-7.991 0-3.056.711-5.641 2.369-7.991 1.658-2.35 3.79-4.23 6.869-5.64 3.08-1.41 6.87-2.116 11.371-2.116 3.079 0 6.158.47 9.001 1.175 3.079.705 5.685 1.88 7.817 3.055l-7.343 8.696c-3.317-1.41-6.633-2.115-9.712-2.115-2.606 0-4.501.47-5.685 1.175-1.185.705-1.896 1.88-1.896 3.056 0 1.41.711 2.35 2.132 2.82 1.422.705 3.791 1.41 6.87 2.115a49.361 49.361 0 0 1 8.764 2.585c2.369.94 4.264 2.35 6.159 4.23 1.895 1.646 2.606 4.466 2.606 7.756zM87.882 19.037c0 3.76-.947 6.816-2.605 9.4-1.659 2.586-4.027 4.701-7.107 6.111s-6.87 2.116-10.896 2.116H59.22v12.69H45.955V.706h21.319c4.264 0 7.817.705 10.896 2.115 3.08 1.41 5.448 3.526 7.107 6.346 1.895 3.055 2.605 6.346 2.605 9.87zm-13.265 0c0-2.35-.71-3.995-2.132-5.17s-3.316-1.88-6.159-1.88h-7.343v14.336h7.343c2.606 0 4.738-.706 6.16-1.88s2.131-3.056 2.131-5.406zm55.904 20.212v10.576h-37.19V1.175h36.242v10.576h-23.214v8.226h18.476v10.341h-18.476v8.93zm50.218-38.074v48.65h-10.896l-20.609-25.853v25.853h-13.028V1.175h10.896l20.609 25.853V1.175zm84.092 37.604v10.81h-32.926V.94h13.265v37.604h19.661zm56.851 11.046h-13.739l-3.553-9.401h-19.661l-3.553 9.4h-13.502l20.608-48.649h13.029zM300.6 30.083l-5.922-15.512-5.922 15.512zm62.536 4.935c0 2.82-.71 5.641-2.369 7.991-1.658 2.35-3.79 4.23-6.869 5.64-3.08 1.41-6.87 2.116-11.37 2.116-3.79 0-7.344-.47-10.897-1.41s-6.396-2.35-8.527-3.996l7.106-8.46c1.421.705 2.842 1.175 4.501 1.88 2.842.94 5.448 1.41 8.054 1.41 4.974 0 7.58-1.41 7.58-3.995 0-1.41-.711-2.35-2.132-3.056-1.421-.705-3.79-1.41-6.87-2.115-3.553-.705-6.395-1.645-8.764-2.585s-4.264-2.35-6.159-4.23c-1.658-1.88-2.606-4.701-2.606-7.991 0-3.056.711-5.641 2.369-7.991 1.658-2.35 3.79-4.23 6.87-5.64 3.079-1.41 6.869-2.116 11.37-2.116 3.079 0 6.159.47 9.001 1.175 3.08.705 5.448 1.88 7.817 3.055l-7.343 8.696c-3.316-1.41-6.633-2.115-9.712-2.115-2.606 0-4.501.47-5.685 1.175-1.185.705-1.895 1.88-1.895 3.056 0 1.41.71 2.35 2.132 2.82 1.421.705 3.79 1.41 6.869 2.115a49.4 49.4 0 0 1 8.765 2.585c2.368.94 4.263 2.35 6.158 4.23 1.659 1.646 2.606 4.466 2.606 7.756zm-322.63-9.636c0 13.867-11.37 25.383-25.583 25.383-5.685 0-10.66-1.88-14.923-4.936l8.528-10.105c1.895 1.175 4.027 1.88 6.395 1.88 6.633 0 12.081-5.406 12.081-11.986 0-6.581-5.448-11.987-12.08-11.987-2.37 0-4.501.705-6.396 1.88L0 5.407C4.264 2.35 9.475.47 14.923.47 29.136.235 40.506 11.516 40.506 25.383zm177.66 10.341l8.528 10.107c-4.264 3.055-9.476 4.935-14.924 4.935-13.976 0-25.583-11.281-25.583-25.383C186.187 11.517 197.557 0 211.77 0c5.685 0 10.66 1.88 14.924 4.936l-8.528 10.105c-1.895-1.175-4.027-1.88-6.396-1.88-6.632 0-12.081 5.406-12.081 11.986 0 6.581 5.449 11.987 12.081 11.987 2.369.47 4.501-.235 6.396-1.41zm236.169 14.102l-10.423-15.042c3.079-1.41 5.211-3.525 6.87-6.11 1.658-2.585 2.605-5.876 2.605-9.401 0-3.76-.947-6.816-2.605-9.636-1.659-2.82-4.027-4.7-7.107-6.346-3.079-1.41-6.869-2.115-10.896-2.115H411.46v48.65h13.028V37.134h6.159l8.764 12.69zm-29.847-37.839h7.58c2.606 0 4.738.705 6.159 1.88s2.132 3.056 2.132 5.17c0 2.351-.711 3.996-2.132 5.171s-3.316 1.88-6.159 1.88h-7.58zM483.945.235c13.976 0 25.583 11.281 25.583 25.382S498.157 51 483.945 51c-13.976 0-25.583-11.281-25.583-25.383S469.732.235 483.945.235zm-13.029 25.147c0 7.051 5.685 12.692 12.792 12.692 7.106 0 12.791-5.64 12.791-12.692s-5.685-12.69-12.791-12.69c-6.87 0-12.792 5.64-12.792 12.69zM538.901.235c13.976 0 25.583 11.281 25.583 25.382S553.114 51 538.901 51c-13.976 0-25.583-11.281-25.583-25.383S524.925.235 538.901.235zm-12.792 25.147c0 7.051 5.685 12.692 12.792 12.692 7.106 0 12.791-5.64 12.791-12.692s-5.685-12.69-12.791-12.69c-7.107 0-12.792 5.64-12.792 12.69zm70.353 6.816L580.828 1.175h-10.896v48.65h11.607V28.438l11.607 21.387h6.87l11.607-21.387v21.387h11.607V1.175h-10.897z" />
+</svg>
+</a>
+</div>
+<nav class="oc-mainHeader__navWrapper" role="navigation" aria-label="Menu principal">
+<div class="oc-mainHeader__linksWrapper">
+<div class="oc-mainHeader__navLinkWrapper"><a class="oc-mainHeader__navLink" data-event="click|Header|Paths" href="/en/paths">Paths</a></div>
+<div class="oc-mainHeader__navLinkWrapper"><a class="oc-mainHeader__navLink" data-event="click|Header|Courses" href="/en/courses">Courses</a></div>
+<div class="oc-mainHeader__navLinkWrapper"><a class="oc-mainHeader__navLink" data-event="click|Header|Apprenticeship" href="/en/apprenticeship">Apprenticeship</a></div>
+<div class="oc-mainHeader__navLinkWrapper oc-mainHeader__navLinkWrapper--separator"><a class="oc-mainHeader__navLink" data-event="click|Header|Business" href="/en/business">Business</a></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--[if lt IE 10]>
+<div class="alertMessage">
+    <span class="bullet bullet--small bullet--orange alertMessage__icon"> <i class="icon-exclamation"></i></span>
+    <p class="alertMessage__text">
+        The web browser you are using is out of date, please <a href="https://browser-update.org/update.html">upgrade</a>.
+    </p>
+</div>
+<![endif]-->
+
+<div id="ie-ten-disclaimer" class="alertMessage" style="display:none">
+<span class="bullet bullet--small bullet--orange alertMessage__icon"> <i class="icon-exclamation"></i></span>
+<p class="alertMessage__text">
+The web browser you are using is out of date, please <a href="https://browser-update.org/update.html">upgrade</a>.
+</p>
+</div>
+<script>
+  if (document.documentMode === 10) {
+    document.getElementById('ie-ten-disclaimer').style.display = 'block';
+  }
+</script>
+
+<noscript>
+    <div class="alertMessage">
+        <span class="bullet bullet--small bullet--orange alertMessage__icon"> <i class="icon-exclamation"></i></span>
+        <p class="alertMessage__text">
+            Please use a <a href="https://browser-update.org/update.html">modern web browser</a> with JavaScript enabled to visit OpenClassrooms.com
+        </p>
+    </div>
+</noscript>
+<div id="mainSearchLegacy" class="mainSearch"></div>
+<div id="mainContentWithHeader">
+<section class="breadcrumb  inset no-padding">
+<div class="grid-wrapper">
+<div class="grid-inner">
+<nav class="breadcrumb__wrapper" role="navigation" aria-label="Breadcrumb">
+<ul class="breadcrumb__trail">
+<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a class="breadcrumb__link" href="https://openclassrooms.com/en/" itemprop="url">
+<span itemprop="title">Home</span
+                                    ></a>
+<span class="breadcrumb__separator"> > </span>
+</li>
+<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a class="breadcrumb__link" href="https://openclassrooms.com/en/courses" itemprop="url">
+<span itemprop="title">Course</span
+                                    ></a>
+<span class="breadcrumb__separator"> > </span>
+</li>
+<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+ <a class="breadcrumb__link" href="https://openclassrooms.com/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb?status=published" itemprop="url">
+<span itemprop="title">Go Full-Stack With Node.js, Express, and MongoDB</span
+                                    ></a>
+<span class="breadcrumb__separator"> > </span>
+</li>
+<li class="breadcrumb__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+Accept incoming files with multer
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</section>
+<div id="pre-main-part">
+</div>
+<main class="claire clearfix" role="main" id="mainContent">
+<article itemscope itemtype="http://schema.org/Article" lang="en">
+<header id="course-header" class="courseHeader" xmlns="http://www.w3.org/1999/html">
+<div class="grid-wrapper"><div class="grid-inner"><div class="grid-inner-content"><div class="courseHeader__topPart"><a itemprop="url" href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb"><h1 class="oc-typography-h2 typoColorOnContrastedBg  courseHeader__title" data-course-title="Go Full-Stack With Node.js, Express, and MongoDB">Go Full-Stack With Node.js, Express, and MongoDB</h1></a></div></div></div></div><div class="grid-wrapper"><div class="grid-inner"><div class="grid-inner-content"><div class="courseHeader__bottomPart"><div class="courseHeader__details"><div class="courseHeader__detailsGroup"><ul class="courseHeader__detailsList"><li class="courseHeader__detailsItem"><img class="courseHeader__icon js-tooltip" src="/images/icons/schedule.svg?f87ce09" width="16" title="This course requires an average of 10 hours of work to be completed." /><span class="courseHeader__label">10 hours</span></li><li class="courseHeader__detailsItem"><i class="icon-level courseHeader__icon"></i><span class="courseHeader__label">Medium</span></li></ul></div><div class="courseHeader__detailsGroup courseHeader--license"><a class="courseHeader__license" target="_blank" href="https://creativecommons.org/licenses/by-sa/2.0"><span class="courseHeader__label">License</span><ul class="courseHeader__detailsList"><li class="iconBar__item"><i class="icon-cc iconBar__icon" title="CC"></i></li><li class="iconBar__item"><i class="icon-ccby iconBar__icon" title="BY"></i></li><li class="iconBar__item"><i class="icon-ccsa iconBar__icon" title="SA"></i></li></ul></a></div></div></div></div></div></div>
+<div id="popin-formats-availables" class="popin popin--course-formats-availables">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="course-types course-types--withSpace">
+<a class="course-types__item" href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb">
+<i class="icon-desktop course-types__icon"></i>
+</a>
+<a class="course-types__item" href="/en/courses?video=true">
+<i class="icon-video course-types__icon"></i>
+</a>
+<a class="course-types__item" href="/en/courses/5614116/certificate_example" target="_blank">
+<i class="icon-badge course-types__icon js-close-button"></i>
+</a>
+ </div>
+<p><a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb">Free online content</a> available in this course.</p>
+<p>course.header.alt.is_video</p>
+<p>
+course.header.alt.is_certifying
+</p>
+<a class="button button--primary js-close-button" href="#">Got it!</a>
+</div>
+</header>
+<div class="grid-wrapper">
+<div class="grid-inner">
+<div class="grid-inner-content">
+<p class="courseHeader__updatedTime">
+Last updated on 9/10/19 </p>
+</div>
+</div>
+</div>
+<div class="grid-wrapper">
+<div class="grid-inner">
+<div class="grid-inner-content">
+<nav id="course-timeline" class="timeline">
+<div class="timeline__inner">
+<span class="timeline__iconContainer">
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb" title="Back to course outline" class="roundIcon timeline__roundIcon">
+<i class="icon-home roundIcon__icon"></i>
+</a>
+</span>
+<div class="timeline__steps">
+<span class="timeline__splitChapter"></span>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5614123-set-up-your-coding-environment" class="timeline__step timeline__step--completed" title="Set up your coding environment">
+<span class="timeline__stepName">
+Set up your coding environment
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656191-start-a-node-server" class="timeline__step timeline__step--completed" title="Start a Node server">
+<span class="timeline__stepName">
+Start a Node server
+</span>
+</a>
+ <a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656196-create-an-express-app" class="timeline__step timeline__step--completed" title="Create an Express app">
+<span class="timeline__stepName">
+Create an Express app
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656201-create-a-get-route" class="timeline__step timeline__step--completed" title="Create a GET route">
+<span class="timeline__stepName">
+Create a GET route
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656206-create-a-post-route" class="timeline__step timeline__step--completed" title="Create a POST route">
+<span class="timeline__stepName">
+Create a POST route
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/2998" class="timeline__step timeline__step--completed" title="Quiz: Are you ready to create a basic Express web server?">
+<span class="timeline__stepName">
+Quiz: Are you ready to create a basic Express web server?
+</span>
+</a>
+<span class="timeline__splitChapter"></span>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656211-set-up-your-database" class="timeline__step timeline__step--completed" title="Set up your database">
+<span class="timeline__stepName">
+Set up your database
+</span>
+</a>
+ <a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656216-create-a-data-schema" class="timeline__step timeline__step--completed" title="Create a data schema">
+<span class="timeline__stepName">
+Create a data schema
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656221-save-and-retrieve-data" class="timeline__step timeline__step--completed" title="Save and retrieve data">
+<span class="timeline__stepName">
+Save and retrieve data
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656256-complete-the-crud-with-update-and-delete" class="timeline__step timeline__step--completed" title="Complete the CRUD with update and delete">
+<span class="timeline__stepName">
+Complete the CRUD with update and delete
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/3028" class="timeline__step" title="Activity: Create a RESTful API">
+<span class="timeline__stepName">
+Activity: Create a RESTful API
+</span>
+</a>
+<span class="timeline__splitChapter"></span>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656261-optimize-the-back-ends-structure" class="timeline__step timeline__step--completed" title="Optimize the back end&#039;s structure">
+<span class="timeline__stepName">
+Optimize the back end&#039;s structure
+</span>
+</a>
+ <a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656266-prepare-the-database-for-authentication-info" class="timeline__step timeline__step--completed" title="Prepare the database for authentication info">
+<span class="timeline__stepName">
+Prepare the database for authentication info
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656271-create-new-users" class="timeline__step timeline__step--completed" title="Create new users">
+<span class="timeline__stepName">
+Create new users
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656291-check-a-users-credentials" class="timeline__step timeline__step--completed" title="Check a user&#039;s credentials">
+<span class="timeline__stepName">
+Check a user&#039;s credentials
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656296-create-authentication-tokens" class="timeline__step timeline__step--completed" title="Create authentication tokens">
+<span class="timeline__stepName">
+Create authentication tokens
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656301-set-up-authentication-middleware" class="timeline__step timeline__step--completed" title="Set up authentication middleware">
+<span class="timeline__stepName">
+Set up authentication middleware
+</span>
+</a>
+ <a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/3046" class="timeline__step timeline__step--completed" title="Quiz: Are you ready to secure your API?">
+<span class="timeline__stepName">
+Quiz: Are you ready to secure your API?
+</span>
+</a>
+<span class="timeline__splitChapter"></span>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656306-accept-incoming-files-with-multer" class="timeline__step js-current-timeline-step" title="Accept incoming files with multer">
+<span class="timeline__stepName">
+Accept incoming files with multer
+</span>
+<span class="timeline__progressMarker"></span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656311-modify-routes-to-take-files-into-account" class="timeline__step" title="Modify routes to take files into account">
+<span class="timeline__stepName">
+Modify routes to take files into account
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656316-expand-the-back-ends-delete-function" class="timeline__step" title="Expand the back end&#039;s delete function">
+<span class="timeline__stepName">
+Expand the back end&#039;s delete function
+</span>
+</a>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/3049" class="timeline__step" title="Quiz: Are you ready to handle user files?">
+<span class="timeline__stepName">
+Quiz: Are you ready to handle user files?
+</span>
+</a>
+<span class="timeline__splitChapter"></span>
+</div>
+<span class="timeline__iconContainer">
+<a href="/en/courses/5614116/certificate_example" title="Certificate of achievement (see an example)" class="roundIcon timeline__roundIcon">
+<i class="icon-trophy roundIcon__icon"></i>
+</a>
+</span>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<div class="grid-wrapper">
+<div class="grid-inner">
+<div class="contentWithSidebar  spacer  js-contentWithSidebar  grid-inner-content">
+<div class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Accept incoming files with multer" class="part-title">Accept incoming files with multer</h2>
+<section class="space-bottom js-desktop-sticky-container">
+<div itemprop="articleBody" data-page-indentifier="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656306-accept-incoming-files-with-multer" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<video id="r-6466143" data-claire-element-id="29688818" src="https://vimeo.com/301576603"><a href="https://vimeo.com/301576603">https://vimeo.com/301576603</a></video><p id="r-5813492" data-claire-element-id="28055462">In this final part of the course, we are going to implement <strong>file uploads</strong>, to allow users to upload images of the things they want to sell.  We will be doing this using  <code data-claire-semantic="text">multer</code> , a package which allows us to handle incoming files in HTTP requests.  Let's start by installing  <code data-claire-semantic="text">multer</code>  and building a piece of middleware to handle those incoming files.</p><h3 id="r-5694507" data-claire-element-id="29688820">Set up file handling middleware</h3><video id="r-6466144" data-claire-element-id="29688819" src="https://vimeo.com/301576659"><a href="https://vimeo.com/301576659">https://vimeo.com/301576659</a></video><p id="r-5694506" data-claire-element-id="28034884">We will first need to install multer to our project:</p><pre id="r-5705386" data-claire-element-id="25786431"><samp>npm install --save multer</samp></pre><p id="r-5694663" data-claire-element-id="28055464">Now we can create a new piece of middleware in our  <code data-claire-semantic="text">middleware</code>  folder called  <code data-claire-semantic="text">multer-config.js</code> :</p><pre id="r-5694671" data-claire-element-id="24412942"><code data-claire-semantic="javascript">const multer = require('multer');
+
+const MIME_TYPES = {
+  'image/jpg': 'jpg',
+  'image/jpeg': 'jpg',
+  'image/png': 'png'
+};
+
+const storage = multer.diskStorage({
+  destination: (req, file, callback) =&gt; {
+    callback(null, 'images');
+  },
+  filename: (req, file, callback) =&gt; {
+    const name = file.originalname.split(' ').join('_');
+    const extension = MIME_TYPES[file.mimetype];
+    callback(null, name + Date.now() + '.' + extension);
+  }
+});
+
+module.exports = multer({storage: storage}).single('image');</code></pre><p id="r-5694672" data-claire-element-id="24412943">In this middleware:</p><ul id="r-5694682" data-claire-element-id="28055467"><li id="r-5694679" data-claire-element-id="24412950"><p id="r-5694673" data-claire-element-id="24412944">we create a  <code data-claire-semantic="text">storage</code>  constant — to be passed to  <code data-claire-semantic="text">multer</code>  as configuration — which contains the logic necessary for telling  <code data-claire-semantic="text">multer</code>  where to save incoming files</p><ul id="r-5694678" data-claire-element-id="24412949"><li id="r-5694675" data-claire-element-id="24412946"><p id="r-5694674" data-claire-element-id="24412945">the  <code data-claire-semantic="text">destination</code>  function tells  <code data-claire-semantic="text">multer</code>  to save files in the  <code data-claire-semantic="text">images</code>  folder</p></li><li id="r-5694677" data-claire-element-id="24412948"><p id="r-5694676" data-claire-element-id="24412947">the  <code data-claire-semantic="text">filename</code>  function tells  <code data-claire-semantic="text">multer</code>  to use the original name, replacing any spaces with underscores and adding a  <code data-claire-semantic="text">Date.now()</code>  timestamp, as the file name; it then uses the MIME type map constant to resolve the appropriate file extension</p></li></ul></li><li id="r-5694681" data-claire-element-id="28055466"><p id="r-5694680" data-claire-element-id="28055465">we then export the fully configured  <code data-claire-semantic="text">multer</code> , passing it our  <code data-claire-semantic="text">storage</code>  constant, and telling it that we will be handling uploads of single image files</p></li></ul><p id="r-5694683" data-claire-element-id="24412954">Before we can apply our middleware to our stuff routes, we will need to modify them slightly, as the structure of the incoming data is not quite the same when there are files <em>and</em> JSON data.</p>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copy the link" data-tooltip-done="Link copied!">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="text-center space-top">
+<form name="form" method="post" action="/en/courses/5614116/parts/5656306/mark-as-complete" class=" oc-form">
+<button type="submit" id="form_submit" name="form[submit]" class="button button--primary button"><i class='icon-to_do'></i> I finished this chapter. Onto the next!</button>
+<input type="hidden" id="form__token" name="form[_token]" class=" textInput textInput--hidden" value="Gsj_ZWnQqNKVFxLQ5Q5qdo4w7bp0fyjAlUskME6Ot_g" /></form>
+</div>
+<nav id="course-pagination" class="course-pagination    clearfix">
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/3046" class="button button--secondary  course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Quiz: Are you ready to secure your API?</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656311-modify-routes-to-take-files-into-account" class="button button--secondary  course-pagination__btn course-pagination__btn--next">
+<span>Modify routes to take files into account</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<div tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<button class="popin__close-button  js-close-button" title="Close" aria-label="Close">
+<i class="icon-close" aria-hidden="true"></i>
+</button>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<div class="popin__gigTitleContainer js-popin-title">
+<div class="gigWorkersPopin__timeline">
+<div class="gigWorkersPopin__dot">1</div>
+<div class="gigWorkersPopin__line"></div>
+<div class="gigWorkersPopin__dot gigWorkersPopin__dot--disabled">2</div>
+</div>
+<h2 id="popin-view-restriction_popin_title" class="popin__title">Create an <br />OpenClassrooms account</h2>
+</div>
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Wow!</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+We&#039;re happy to see that you&#039;re enjoying our courses (already 5 pages viewed today)! You can keep checking out our courses by becoming a member of the OpenClassrooms community. It&#039;s free!
+</p>
+<p>
+You will also be able to keep track of your course progress, practice on exercises, and chat with other members.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/en/register">Register</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--secondary " href="/en/login">Sign in</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Download video
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Download all videos from this course
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_285788" class="popin" data-popin-title="No certificate of achievement yet at the end of this course
+                    ">
+<img alt="Example of certificate of achievement" src="//static.oc-static.com/prod/images/courses/certif.jpg" />
+</div>
+<div tabindex="-1" role="dialog" aria-hidden="true" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<button class="popin__close-button  js-close-button" title="Close" aria-label="Close">
+<i class="icon-close" aria-hidden="true"></i>
+</button>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<div class="popin__gigTitleContainer js-popin-title">
+<div class="gigWorkersPopin__timeline">
+<div class="gigWorkersPopin__dot">1</div>
+<div class="gigWorkersPopin__line"></div>
+<div class="gigWorkersPopin__dot gigWorkersPopin__dot--disabled">2</div>
+</div>
+<h2 id="popin-download-all-videos_popin_title" class="popin__title">Create an <br />OpenClassrooms account</h2>
+</div>
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+The zip file of 919 MB you will download contains all the videos from this course in high definition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/en/components/courses/5614116/videos">Download</a>
+</div>
+</div>
+</div>
+</div>
+<div id="popin-not-certifying-yet_953444" class="popin" data-popin-title="No certificate of achievement yet at the end of this course
+                    ">
+<img alt="Example of certificate of achievement" src="//static.oc-static.com/prod/images/courses/certif.jpg" />
+</div>
+<div tabindex="-1" role="dialog" aria-hidden="true" class="popin popin--small  js-popin" id="popin-download-video">
+<button class="popin__close-button  js-close-button" title="Close" aria-label="Close">
+<i class="icon-close" aria-hidden="true"></i>
+</button>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<div class="popin__gigTitleContainer js-popin-title">
+<div class="gigWorkersPopin__timeline">
+<div class="gigWorkersPopin__dot">1</div>
+<div class="gigWorkersPopin__line"></div>
+<div class="gigWorkersPopin__dot gigWorkersPopin__dot--disabled">2</div>
+</div>
+<h2 id="popin-download-video_popin_title" class="popin__title">Create an <br />OpenClassrooms account</h2>
+</div>
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choose your video resolution.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Low</a>
+<br />
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Medium</a>
+<br />
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">High</a>
+<br />
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside id="content-with-sidebar" class="contentWithSidebar__sidebar  js-contentWithSidebar-slidingElement">
+<nav class="col-nav">
+<div id="tab-courseMenu" class="col-nav__inner js-sidebar-inner">
+<div class="col-nav__block  col-nav__block--summary">
+<div class="side-paginate">
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/3046" class="side-paginate__previous" title="Previous chapter">
+<i class="icon-previous"></i>
+</a>
+<span class="side-paginate__separator"></span>
+<h6 class="side-paginate__title">
+Add image upload to your API
+</h6>
+<span class="side-paginate__separator"></span>
+<a href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656311-modify-routes-to-take-files-into-account" class="side-paginate__next" title="Next chapter">
+<i class="icon-next"></i>
+</a>
+</div>
+<div class="col-nav__block--summary-list">
+<ol class="col-nav__chapters">
+<li class="selected">
+<span class="col-nav__chapterTitle">Accept incoming files with multer</span>
+</li>
+<li class="">
+<a class="col-nav__chapterTitle" href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656311-modify-routes-to-take-files-into-account">Modify routes to take files into account</a>
+</li>
+<li class="">
+<a class="col-nav__chapterTitle" href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656316-expand-the-back-ends-delete-function">Expand the back end&#039;s delete function</a>
+</li>
+</ol>
+<div class="tocExercise"><ul class="tocExercise__list"><li class="tocExercise__item "><a class="tocExercise__link " href="/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/exercises/3049"><i class="tocExercise__icon icon-test"></i><span class="tocExercise__text">Quiz: Are you ready to handle user files?</span></a></li></ul></div> </div>
+</div>
+<div class="socialNetwork col-nav__block">
+<ul class="socialButtons  js-socialButtons" data-options="
+                title: 'Accept incoming files with multer @OpenClassrooms',
+        mailTitle: 'Course &quot;Accept incoming files with multer&quot; on OpenClassrooms',
+        mailContent: 'Check out the course &quot;Accept incoming files with multer&quot; on OpenClassrooms'">
+<li>
+<a class="roundIcon  roundIcon--twitter addthis_button_twitter  js-socialButtons-btn" data-tooltip="Share on Twitter ">
+<i class="roundIcon__icon  icon-twitter"></i>
+</a>
+</li>
+<li>
+<a class="roundIcon  roundIcon--facebook  addthis_button_facebook  js-socialButtons-btn" data-tooltip="Share on Facebook">
+<i class="roundIcon__icon  icon-facebook"></i>
+</a>
+</li>
+<li>
+<a class="roundIcon  addthis_button_email  js-socialButtons-btn  js-socialButtons-email" data-tooltip="Share via email">
+<i class="roundIcon__icon  icon-letter"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</aside>
+</div>
+</div>
+</div>
+<footer id="course-footer" class="alt-section noMarginBottom">
+<div class="grid-wrapper">
+<div class="grid-inner">
+<div class="grid-inner-content  courseFooter">
+<div class="courseFooter__authorsOnly course-bottom__category">
+<h2>
+Teacher
+</h2>
+<div>
+<a itemprop="author" itemscope itemtype="http://schema.org/Person" href="/en/membres/willalexander" class="no-underlined" rel="nofollow">
+<div class="course-bottom__text-illustrated">
+<span data-author="Will Alexander" data-image-cdn-background-image="https://user.oc-static.com/users/avatars/15557597084568_Screenshot%202019-04-18%20at%2020.59.55.png" data-image-cdn-width="120"></span>
+<h4 itemprop="name">Will Alexander</h4>
+<p itemprop="description">
+Scottish developer, teacher and musician based in Paris.
+</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</article>
+</main>
+</div>
+<div id="footerWrapper">
+<footer id="footer" class="oc-footerSkeleton">
+<hr style="margin-bottom: 8px" />
+<div class="grid-wrapper">
+<div class="grid-inner">
+<div class="oc-footerSkeleton__container">
+<div class="oc-footerSkeleton__item">
+<div class="oc-footerSkeleton__itemTitle"><span class="skeleton" style="height: 20px; width: 80%"></span></div>
+<ul class="oc-footerSkeleton__linksList">
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 70%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 60%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 65%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 40%"></span></a></p>
+</li>
+</ul>
+</div>
+<div class="oc-footerSkeleton__item">
+<div class="oc-footerSkeleton__itemTitle"><span class="skeleton" style="height: 20px; width: 85%"></span></div>
+<ul class="oc-footerSkeleton__linksList">
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 40%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 60%"></span></a></p>
+</li>
+</ul>
+</div>
+<div class="oc-footerSkeleton__item">
+<div class="oc-footerSkeleton__itemTitle"><span class="skeleton" style="height: 20px; width: 75%"></span></div>
+<ul class="oc-footerSkeleton__linksList">
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 65%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 40%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 50%"></span></a></p>
+</li>
+<li class="oc-footerSkeleton__linksListItem">
+<p><a tabindex="inherit"><span class="skeleton" style="height: 14px; width: 40%"></span></a></p>
+</li>
+</ul>
+</div>
+<div class="oc-footerSkeleton__item">
+<span class="skeleton" style="height: 25px; width: 65%"></span>
+<div class="oc-footerSkeleton__socialButtonWrapper">
+<div><span class="skeleton skeleton--round" style="width: 40px; height: 40px"></span></div>
+<div><span class="skeleton skeleton--round" style="width: 40px; height: 40px;"></span></div>
+<div><span class="skeleton skeleton--round" style="width: 40px; height: 40px;"></span></div>
+<div><span class="skeleton skeleton--round" style="width: 40px; height: 40px;"></span></div>
+<div><span class="skeleton skeleton--round" style="width: 40px; height: 40px;"></span></div>
+</div>
+<div><span class="skeleton skeleton--width50" style="height: 40px;"></span></div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div id="showDisclaimer" class="cookiesDisclaimer"></div>
+<script type="text/javascript">
+        function getConsentedSegementIntegrations() {
+            // getCookie from https://www.w3schools.com/js/js_cookies.asp
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i <ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) === ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) === 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            var consent = getCookie('cmapi_cookie_privacy');
+
+            const isCookieAllowedByConsent = (consent, level) => !!consent && consent.search(level) !== -1;
+            const isFunctionalCookieAllowed = isCookieAllowedByConsent(consent, 2);
+            const isAdvertisingCookieAllowed = isCookieAllowedByConsent(consent, 3);
+
+            var isAppCuesPremiumUser = false;
+
+            return {
+                Amplitude: isFunctionalCookieAllowed,
+                'Bing Ads': isAdvertisingCookieAllowed,
+                'Google Ads': isAdvertisingCookieAllowed,
+                'Google Analytics': isFunctionalCookieAllowed,
+                'Zendesk': isFunctionalCookieAllowed,
+                Appcues: isAppCuesPremiumUser && isFunctionalCookieAllowed,
+            };
+        }
+
+        var consentedSegementIntegrations = getConsentedSegementIntegrations();
+
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+            window.loadAnalytics = function () { window.analytics.load('mou95e6tdn', {integrations: consentedSegementIntegrations}) };
+        }}();
+    </script>
+<script>
+  var isPrerender = !!navigator.userAgent.match(/github\.com\/prerender\/prerender/);
+  var preRenderBrowserFakeUa = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163 Safari/537.36";
+  var polyfillUrl = "https://cdn.polyfill.io/v3/polyfill.min.js?unknown=polyfill&features=default,es6,IntersectionObserver,Object.values,Array.prototype.includes,Array.prototype.findIndex,Promise.prototype.finally,fetch,Intl.~locale.en";
+
+    if (isPrerender) {
+    polyfillUrl+= "&ua=" + encodeURIComponent(preRenderBrowserFakeUa);
+  }
+
+  App.scripts.push(polyfillUrl);
+
+  App.script = {
+    SHOP: 'shop',
+    PROJECTS: 'projects',
+    TEAM: 'team',
+    HOME: 'home',
+    COURSE_EDIT: 'course_edit',
+    COURSE_VIEW: 'course_view',
+    ADMIN: 'admin',
+    ADMIN_STUDENT_CREDENTIAL_CREATE: 'adminStudentCredentialCreate',
+    POST_A_JOB: 'postAJob',
+    GIG_WORKERS: 'gigWorkers',
+    JOB_GUARANTEE: 'jobGuarantee',
+    JOB_SURVEY: 'jobSurvey',
+    MCQ_EDIT: 'mcqEdit',
+    MCQ_VIEW: 'mcqView',
+    MENTOR_EDIT: 'mentorEdit',
+    MENTORSHIP_DASHBOARD: 'mentorshipDashboard',
+    MENTORSHIP_SESSION_CREATE: 'mentorshipSessionCreate',
+      MENTORSHIP_SESSION_NON_ASSESSOR_CREATE: 'mentorshipSessionNonAssessorCreate',
+    P2P_EDIT: 'p2pEdit',
+    P2P_VIEW: 'p2pView',
+    PATHS: 'paths',
+    PRIVATE_CONVERSATIONS: 'privateConversations',
+    USER_PROFILE: 'userProfile',
+    WELCOME: 'welcome',
+    APPRENTICESHIP: 'apprenticeship',
+    WEBAPP: 'webapp',
+  };
+</script>
+<script>App.scripts.push("/js/runtime.002cbdc20cb8299140b1.js");</script>
+<script>App.scripts.push("/js/vendors.81a61ff86d92da510696.js");</script>
+<script>App.scripts.push("/js/oc/packages/main.5117ac70b0c2151b3b73.js");</script>
+
+<script>App.scriptToLoad = App.script.COURSE_VIEW</script>
+
+<script>
+    (function () {
+        function loadScripts(cb) {
+            App.scripts.forEach(function (src, index) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false;
+                document.body.appendChild(script);
+
+                if (cb && index === App.scripts.length - 1) {
+                    script.onload = cb;
+                }
+            });
+        }
+
+        function boot() {
+            loadScripts(function () {
+                if (App.modules) {
+                    App.modules.startAll();
+                }
+            });
+        }
+
+        if (window.addEventListener) {
+            window.addEventListener('load', boot, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', boot);
+        } else {
+            window.onload = boot;
+        }
+    }());
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"90dc06697a","applicationID":"20302107","transactionName":"NANaYkJXC0ICAhdYVw1Je0NDQgpcTA4AblsPB1FEVWkGXhYTEFRnEwdKQm9GBEMXPhVYXRQ=","queueTime":0,"applicationTime":556,"atts":"GERZFApNGEw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
