@@ -8,13 +8,13 @@ const Thing = require('../models/thing');
 
 const auth  =  require("../middleware/auth");
 
-router.post('/',  auth , stuffController.creatThing);
+router.post('/', auth , stuffController.creatThing);
 
-router.get('/' , stuffController.getAllThings);
+router.get('/', auth , stuffController.getAllThings);
 
-router.get('/:id',  auth , stuffController.getOneThing);
+router.get('/:id' ,auth, stuffController.getOneThing);
 
-router.put('/:id',  stuffController.modifyThing);
+router.put('/:id', auth,  stuffController.modifyThing);
 
 router.delete('/:id', auth ,  stuffController.deleteThing);
 
