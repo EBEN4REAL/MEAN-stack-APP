@@ -10,11 +10,11 @@ const auth  =  require("../middleware/auth");
 
 router.post('/',  auth , stuffController.creatThing);
 
-router.get('/',  auth , stuffController.getAllThings);
+router.get('/' , stuffController.getAllThings);
 
 router.get('/:id',  auth , stuffController.getOneThing);
 
-router.put('/:id', auth ,  stuffController.modifyThing);
+router.put('/:id',  stuffController.modifyThing);
 
 router.delete('/:id', auth ,  stuffController.deleteThing);
 
