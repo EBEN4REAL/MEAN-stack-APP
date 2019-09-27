@@ -8,7 +8,9 @@ const Thing = require('../models/thing');
 
 const auth  =  require("../middleware/auth");
 
-router.post('/',  auth , stuffController.creatThing);
+const multer = require("../middleware/multer-config");
+
+router.post('/',  auth , multer, stuffController.creatThing);
 
 router.get('/',  auth , stuffController.getAllThings);
 
