@@ -1,5 +1,7 @@
 const Thing = require('../models/thing');
 
+const fs = require('fs');
+
 exports.creatThing = (req, res, next) => {
 
   const url = req.protocol + '://' + req.get("host");
@@ -41,6 +43,8 @@ exports.getOneThing  = (req, res, next) => {
     }
   );
 }
+
+
 exports.modifyThing = (req, res, next) => {
   let thing = new Thing({ _id: req.params._id });
   if (req.file) {
@@ -80,19 +84,26 @@ exports.modifyThing = (req, res, next) => {
 };
 
 exports.deleteThing = (req, res, next) => {
-  Thing.deleteOne({_id: req.params.id}).then(
-    () => {
-      res.status(200).json({
-        message: 'Deleted!'
-      });
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
+
+	Thing.findOne({_id: req.params.id}).then((thing) => {
+		const filename = thing.imageUrl.split("/imagess/")[1];
+		fs.unlink("images/" + filename, () => {
+			Thing.deleteOne({_id: req.params.id}).then(
+			    () => {
+			      res.status(200).json({
+			        message: 'Deleted!'
+			      });
+			    }
+			  ).catch(
+			    (error) => {
+			      res.status(400).json({
+			        error: error
+			      });
+			    }
+			  );
+		});
+	})
+  
 }
 
 exports.getAllThings = (req, res, next) => {
